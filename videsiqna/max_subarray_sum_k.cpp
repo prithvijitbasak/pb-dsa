@@ -27,7 +27,7 @@ int main() {
             ump[currSum]=i;
         }
     }
-    if (maxi == -1)
+    if ( maxi == -1 )
         cout << "There are no any such subarrays" << "\n";
     else
         cout << "The longest subarray of size k is: " << maxi << "\n";
