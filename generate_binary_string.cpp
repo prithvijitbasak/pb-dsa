@@ -10,7 +10,7 @@ int main() {
         string str="";
         for(int j=n-1;j>=0;j--) {
             if((i>>j)&1) str+='1'; // main intuition to generate
-            else str+='0';
+            else str+='0'; // this logic tells us that if the bit at jth position is set or unset
         }
         ans.push_back(str);
     }
