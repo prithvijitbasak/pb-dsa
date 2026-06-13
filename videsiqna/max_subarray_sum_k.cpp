@@ -1,4 +1,4 @@
-// to find the longest subarray size of sum of k
+// to find the longest subarray(length) which is having sum == k
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
@@ -23,7 +23,7 @@ int main() {
         int need=currSum-k;
         if(ump.find(need) != ump.end()) {
             maxi=max(i-ump[need], maxi);
-        } if(ump.find(need) == ump.end()) {
+        } if(ump.find(currSum) == ump.end()) {
             ump[currSum]=i;
         }
     }
