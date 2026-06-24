@@ -14,7 +14,8 @@ int main() {
     for(int i=0;i<n;i++) cin>>b[i];
     sort(a.rbegin(),a.rend());
     sort(b.begin(),b.end());
+    long long sum=0;
     for(int i=0;i<n;i++)
-        cout<<a[i]*b[i]<<" ";
-    cout<<"\n";
+        sum+=(a[i]*b[i]);
+    cout<<"The sum of products is: "<<sum<<"\n";
 }
