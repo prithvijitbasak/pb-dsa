@@ -14,8 +14,9 @@ int main() {
         dp[2]=max(arr[0],arr[1]);
 
     for(int i=3;i<=n;i++) {
+        
         // very crucial line 
-        dp[i]=max(dp[i-1],dp[i-2]+arr[i-3]);
+        dp[i]=max(dp[i-1],dp[i-2]+arr[i-1]);
     }
     cout<<dp[n]<<"\n";
 }
