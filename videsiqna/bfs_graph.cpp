@@ -15,26 +15,32 @@ int main()
     }
     vector<int> vis(n + 1, 0);
     vector<int> bfs;
-    queue<int> q;
-    q.push(0);
-    vis[0] = 1;
-    while (!q.empty())
+    for (int start = 0; start <= n; start += 1)
     {
-        int node = q.front();
-        q.pop();
-        bfs.push_back(node);
-        for (auto it : graph[node])
+        if(vis[start])
+            continue;
+        queue<int> q;
+        q.push(start);
+        vis[start] = 1;
+        while (!q.empty())
         {
-            if (!vis[it])
+            int node = q.front();
+            q.pop();
+            bfs.push_back(node);
+            for (auto it : graph[node])
             {
-                vis[it]=1;
-                q.push(it);
+                if (!vis[it])
+                {
+                    vis[it] = 1;
+                    q.push(it);
+                }
             }
         }
     }
-    cout<<"The BFS is: "<<"\n";
-    for(auto it:bfs) {
-        cout<<it<<" ";
+    cout << "The BFS is: " << "\n";
+    for (auto it : bfs)
+    {
+        cout << it << " ";
     }
-    cout<<"\n";
+    cout << "\n";
 }
