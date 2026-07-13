@@ -1,4 +1,5 @@
 // how to initialise a undirected graph
+// TC: O(v+e)
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
