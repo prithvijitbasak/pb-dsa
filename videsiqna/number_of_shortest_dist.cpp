@@ -34,7 +34,9 @@ int main() {
                 level[it]=level[node]+1;
             }
             else {
-                if(level[it]==level[node]+1)
+                // it means that there can be a different shortest path which already exists.
+                // and that have been explored that's why vis[it]=1 and thereby the control came to else part
+                if(level[it]==level[node]+1) 
                     ways[it]=ways[it]+ways[node];
             }
         }
