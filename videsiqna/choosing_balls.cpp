@@ -6,7 +6,13 @@
 // main condition is the balls should be identical and not distinct 
 // if the balls are distinct then its k^n ways
 // this is stars and bar trick
-// video - https://drive.google.com/file/d/1YqKzjNopb-94Wqm2ZaSMVd-eT4Jj3vkP/view
+// main trick is we just need to find the ways of putting the partition 
+// such that the position becomes k after partitioning 
+// for example if there are k boxes then 
+// creating n+k empty areas for putting boxes and partition sticks 
+// now if there are 3 boxes and 5 balls to create box places we need 7 places empty
+// and in 2 places we will place the sticks which woudl create 3 places to add 5 balls 
+// thus the formula comes
 
 #include<bits/stdc++.h>
 using namespace std;
