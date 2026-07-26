@@ -16,7 +16,8 @@ int main() {
     for(ll i=2;i<=n;i++)
         spf[i]=i;
     for(ll i=2;i*i<=n;i++) {
-        // checking if the value of spf until i is still i
+        // checking if the value of spf until i is still i to check whether 
+        // its a prime number or not
         if(spf[i]==i) {
             for(ll j=i*i;j<=n;j+=i) {
                 if(spf[j]==j)
@@ -24,6 +25,7 @@ int main() {
             }
         }
     }
+    cout<<"The input should be greater than 1"<<"\n";
     cout<<"The smallest prime factor up until "<<n<<" is : "<<"\n";
     cout<<spf[n]<<"\n";
 }
