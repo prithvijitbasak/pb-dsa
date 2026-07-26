@@ -11,6 +11,7 @@ int main() {
     int n;
     // this is the value of which we want to know
     // the smallest prime factor value
+    cout<<"The input should be greater than 1"<<"\n";
     cin>>n;
     vector<ll> spf(n+10);
     for(ll i=2;i<=n;i++)
@@ -25,7 +26,6 @@ int main() {
             }
         }
     }
-    cout<<"The input should be greater than 1"<<"\n";
     cout<<"The smallest prime factor up until "<<n<<" is : "<<"\n";
     cout<<spf[n]<<"\n";
 }
