@@ -58,6 +58,8 @@ int main()
     ll found_pair = 0;
     for (auto it : ump)
     {
+        // if there are no any second largest value for any digsum
+        // then it means that no any pairs could happen
         if (it.second.second > 0)
         {
             found_pair = 1;
