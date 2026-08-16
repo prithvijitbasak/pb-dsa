@@ -67,8 +67,11 @@ int main()
          * WHY upper_bound FOR START?
          * We need the count of lamps that started AT OR BEFORE 'val' (L <= val).
          * upper_bound finds the first element STRICTLY GREATER than 'val' (> val).
-         * Because the array is sorted, the index we get (by subtracting left.begin())
-         * perfectly represents the count of all elements before it, which are <= val.
+         * Because the array is sorted, the index represents the count of all elements <= val.
+         *
+         * EXAMPLE: left = [1, 3, 5, 5, 8], val = 5
+         * upper_bound(5) points to 8 (at index 4).
+         * Index 4 means exactly 4 lamps (1, 3, 5, 5) started at or before 5.
          */
         ll start = upper_bound(left.begin(), left.end(), val) - left.begin();
 
@@ -76,12 +79,16 @@ int main()
          * WHY lower_bound FOR END?
          * We need the count of lamps that ended STRICTLY BEFORE 'val' (R < val).
          * lower_bound finds the first element GREATER THAN OR EQUAL to 'val' (>= val).
-         * Because the array is sorted, the index we get (by subtracting right.begin())
-         * perfectly represents the count of all elements before it, which are < val.
+         * Because the array is sorted, the index represents the count of all elements < val.
+         *
+         * EXAMPLE: right = [2, 4, 5, 5, 9], val = 5
+         * lower_bound(5) points to the first 5 (at index 2).
+         * Index 2 means exactly 2 lamps (2, 4) ended strictly before 5.
          */
         ll endbefore = lower_bound(right.begin(), right.end(), val) - right.begin();
 
         // Active Lamps = (Lamps started at or before P) - (Lamps ended strictly before P)
+        // From example above: 4 started - 2 ended = 2 active lamps at point 5.
         ans.push_back(start - endbefore);
     }
 
