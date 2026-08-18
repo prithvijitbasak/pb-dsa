@@ -1,3 +1,9 @@
+// we are being given an array of n size 
+// there are five unique integers we are given a,b,c,d,e
+// these numbers are present in array multiple times and apart from these numbers
+// there are other numbers as well
+// we need to find the number of subarrays which have equal number of 
+// a,b,c,d,e appearing
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
